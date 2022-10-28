@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.bf766d3d.css",
-    "main.js": "/static/js/main.9668d634.js",
+    "main.js": "/static/js/main.e2bd8ac1.js",
     "static/media/alisaAndLaptop.png": "/static/media/alisaAndLaptop.4c29a355a2999c939736.png",
     "static/media/fitdayapp.png": "/static/media/fitdayapp.137aa0458794f483ed69.png",
     "static/media/master.JPG": "/static/media/master.080e858a4fca9a84115c.JPG",
@@ -14,10 +14,10 @@
     "static/media/workoutplan.JPG": "/static/media/workoutplan.67537de48ae764f9baf8.JPG",
     "index.html": "/index.html",
     "main.bf766d3d.css.map": "/static/css/main.bf766d3d.css.map",
-    "main.9668d634.js.map": "/static/js/main.9668d634.js.map"
+    "main.e2bd8ac1.js.map": "/static/js/main.e2bd8ac1.js.map"
   },
   "entrypoints": [
     "static/css/main.bf766d3d.css",
-    "static/js/main.9668d634.js"
+    "static/js/main.e2bd8ac1.js"
   ]
 }
