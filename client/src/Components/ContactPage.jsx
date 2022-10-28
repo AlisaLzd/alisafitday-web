@@ -1,7 +1,7 @@
 import React from "react";
 import ContactForm from "./ContactForm";
-import InstagramFeed from "react-ig-feed";
-import "react-ig-feed/dist/index.css";
+// import InstagramFeed from "react-ig-feed";
+// import "react-ig-feed/dist/index.css";
 
 function ContactPage() {
   var eng = JSON.parse(localStorage.getItem("lang"));
