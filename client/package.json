@@ -9,7 +9,7 @@
     "react-scripts": "^5.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "GENERATE_SOURCEMAP=false react-scripts start",
     "proxy": "http://alisafitday.dev.alisafitday.com",
     "build": "react-scripts build",
     "test": "react-scripts test",
