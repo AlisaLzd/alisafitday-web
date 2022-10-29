@@ -1,5 +1,19 @@
 const app = require("express")();
 
+app.use(express.static(path.resolve(__dirname, "../client/build")));
+
+const client = require("@mailchimp/mailchimp_marketing");
+
+client.setConfig({
+  apiKey: process.env.MAILCHIMP_API_KEY,
+  server: "us14",
+});
+
+//enable express to parse URL-encoded body i.e. info from HTML form
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(cors());
+app.use(express.static("../client"));
 //POST request to subscribe to mailing list
 app.post("/api/form", function (req, res) {
   var email = req.body.email;
