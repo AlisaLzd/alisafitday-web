@@ -1,4 +1,10 @@
-const app = require("express")();
+require("dotenv").config();
+const express = require("express");
+var path = require("path");
+const cors = require("cors");
+const nodemailer = require("nodemailer");
+const PORT = process.env.PORT || 3001;
+const app = express();
 
 app.use(express.static(path.resolve(__dirname, "../client/build")));
 
