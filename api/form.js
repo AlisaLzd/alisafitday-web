@@ -21,22 +21,29 @@ app.use(express.json());
 app.use(cors());
 app.use(express.static("../client"));
 //POST request to subscribe to mailing list
-app.post("/api/form", function (req, res) {
-  var email = req.body.email;
-  console.log(email);
 
-  const run = async () => {
-    const response = await client.lists.batchListMembers("a7eb41ccfb", {
-      members: [
-        {
-          email_address: email,
-          status: "subscribed",
-        },
-      ],
-    });
-  };
+module.exports = async (req, res) => {
+  app.post("/api/form", function (req, res) {
+    var email = req.body.email;
+    console.log(email);
 
-  run().catch((e) => res.send(console.log(e)));
-});
+    const run = async () => {
+      const response = await client.lists.batchListMembers("a7eb41ccfb", {
+        members: [
+          {
+            email_address: email,
+            status: "subscribed",
+          },
+        ],
+      });
+    };
 
-module.exports = app;
+    run().catch((e) => res.send(console.log(e)));
+  });
+
+  res.json({
+    body: req.body,
+    query: request.query,
+    cookies: req.cookies,
+  });
+};
