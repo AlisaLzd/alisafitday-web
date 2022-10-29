@@ -94,3 +94,8 @@ app.get("*.js", function (req, res, next) {
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
+
+export default function handler(req, res) {
+  const { name = "World" } = req.query;
+  return res.send(`Hello ${name}!`);
+}
