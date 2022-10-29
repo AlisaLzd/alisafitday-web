@@ -22,28 +22,22 @@ app.use(cors());
 app.use(express.static("../client"));
 //POST request to subscribe to mailing list
 
-module.exports = async (req, res) => {
-  app.post("/api/form", function (req, res) {
-    var email = req.body.email;
-    console.log(email);
+app.post("/api/form", function (req, res) {
+  var email = req.body.email;
+  console.log(email);
 
-    const run = async () => {
-      const response = await client.lists.batchListMembers("a7eb41ccfb", {
-        members: [
-          {
-            email_address: email,
-            status: "subscribed",
-          },
-        ],
-      });
-    };
+  const run = async () => {
+    const response = await client.lists.batchListMembers("a7eb41ccfb", {
+      members: [
+        {
+          email_address: email,
+          status: "subscribed",
+        },
+      ],
+    });
+  };
 
-    run().catch((e) => res.send(console.log(e)));
-  });
+  run().catch((e) => res.send(console.log(e)));
+});
 
-  res.json({
-    body: req.body,
-    query: request.query,
-    cookies: req.cookies,
-  });
-};
+module.exports = app;
