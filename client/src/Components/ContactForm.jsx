@@ -20,7 +20,7 @@ function ContactForm(props) {
       text: text.value,
     };
 
-    let response = await fetch("/contact", {
+    let response = await fetch("/api/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
